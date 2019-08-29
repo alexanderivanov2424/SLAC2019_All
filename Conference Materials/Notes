@@ -1,0 +1,275 @@
+three Cs
+
+setup the problem
+motivation - clustering/ missing peaks
+
+cosine similarity doesn't catch small peaks for clustering
+
+talk about the challenges and issues 
+
+
+peak finding:
+
+challenges:
+
+0) computational problem takes time
+
+1) overlapping peaks that create sholders
+
+2) realpeaks or noise (show heat map noise region)
+
+explain logic of Robbert's code
+
+
+divide data into blocks each block has 1 peak
+(each block should have only one peak)
+(but because of sholder peaks blocks can have more than one peak)
+
+different ways of finding blocks
+
+different ways of fitting / optimizing curve fits
+
+
+examples: 85 peak_finding_plot
+
+PeakParams on heat plot - what we are finding and what we are not finding. The problem we are still struggling with.
+
+
+
+
+
+
+____________________________________
+
+
+
+
+Synchrotron has a lot of data
+
+advances in synchrotron tech has allowed massive data collection
+new bottle new between experiments -> data (->) knowledge
+
+Before bottle neck was collecting data but now we can collect data much faster
+
+how can we analyze it more effectively cant have people going through manually
+
+
+
+Our task
+
+we are looking for metalic glasses - screening a variety of materials
+
+identify different phases show some diffraction patterns how can we bin them
+
+simply way - cosine clustering
+
+through out talking about diffraction patterns
+
+
+slides 5 and 6 highlight peaks in diff patterns
+
+transition to peaks:
+
+cosine isn't focusing on data features (presence not intensity)
+
+
+only talk about fix curve numbers
+
+Further directions:
+
+improve algorithm BBA is probably not the best 
+other aproaches:
+- relatively simple aproach based on what an expert would do
+(group data and point at peaks)
+- machine learning learning to detect peaks
+- talk to apurva
+
+
+
+____________________________________
+
+Focus on blocking
+add min blocking mention
+number of peaks - fit until max or until residual matches noise
+why do we block - faster easier to fit peaksx
+
+
+
+
+
+
+
+
+
+
+_______________________________________
+
+asymetric peak before after for slide 26
+
+backgorund - state problems then explain 
+
+restate question, say it is good, then go to explination
+
+
+explicitly state why we want to use this
+what other methods exist what are we different
+- no information apriory
+- we want to do this rapidly
+
+
+###############################################################
+
+
+
+
+comments
+- talk about graphs in 2
+- 6 what is the diffraction pattern exaplin plot
+
+- 5 reducing information from measurement to knowledge
+why are we collecting measurements for knowledge
+extract high level information that is scientifically relevant
+
+each diff pattern gives us a dot on the phase diagram
+
+only useful information is where the peaks are
+this is feature extraction
+
+we may think that we can extract local maxima but it is bad
+animate local maxima issue
+
+
+putting it all together show peaks fit on full patterns
+- runs fast
+- no information
+- now we can apply this for creating phase diagrams, ML problems, automations
+
+further directions slide:
+%%%%%%%%%%%%%%
+show phase diagram - draw line - we can use this information
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+comments part 2:
+
+Robert is supposed to be giving this talk but he cannot make it
+
+thank department of energy
+better logo - and stanford logo
+
+slide 8 - why cant other software fit this
+- we don't know how many peaks we have
+- (backup) build into our built in data analysis ( backup )
+
+slide 8 - one way of doing this blocking is BBA
+
+slide 10 - we have been working with jeff scargle from nasa ames ont his method
+"jeff scargle suggested the use of this algortihm to us"
+
+
+slide 14 - we can merge blocks point out that we skip over noise region with noise peaks
+
+mark important slides***
+
+slide 18 - equations to backup slides
+ - assumption peak shape (voight) in paranthesis
+
+
+slide 23 - difference plot - looks like noise no need to further fit peaks
+
+slide 25 - fits this ugly looking peak on right
+throw away left - background
+
+slide 26 - animation
+
+slide 26 B curves fit to full diffractions
+
+slide 27 - break up
+phase diagram explain heat map
+
+
+
+- we want a open source pipeline - we need source code for other programs
+- can I have your code
+
+
+thankyou slide with message and key pictures from talk
+thankyou slide - when we finish this code will be published - roberts emails
+
+backup slide with the simulated peak fitting
+
+
+____________________________
+
+slide numbers
+
+custering
+
+
+slide 6 you are familiar with these diffractions
+I am told the most useful info is the peaks (params)
+we need these to go to phases and how they change  - knowledge
+
+easy prop local max - subtlyties
+
+profile shape function
+
+EXTRACTION - pull back to feature extraction when applicable
+
+what is the best low rank representation of the data
+
+can be paralelized bc indepen peices
+
+slide 16 - lets take a step step look at what this looks at
+I may have lost you lets look at it step by step
+
+
+large blocks are usually background
+
+18 - reduce the problem - only 12 blocks search for maxima in block middles
+backup slide with correct blocking actual blocks are slightly diff
+
+if middle peak block - if side we merge it go to lise 21
+
+slide 26 add green dot and green border to make connection
+
+
+slide 27 is not noise so we iterate next local maxima
+title NOISE YPEAKS
+
+transition to highly overlapping peaks
+
+lets look at an example where we go beyond human perseption
+
+slide 35 enlarge
+%%
+title::
+Robust
+Fast 
+Automatic
+beyond perseption
+
+%%
+slide 31 - split
+
+i have coupel of minutes where do we want to go from here
+
+slid 39 - small peaks
+	- asymetric peaks versus overlapping peaks
+	 - title :: aditional information
+
+slide 40 - BLOCKING and CURVE FITTING
+strategy for peak extraction through these two methodsa
+
+Conclustion - Thankyou animate (robbert appears for thankyou)
+
+BACKUP SLIDE - noise band on diff pattern
+
+BACKUP SLIDE - log scale of 44 and sqrt scale
+
+
+
+
+
+
